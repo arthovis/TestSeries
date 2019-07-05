@@ -20,13 +20,13 @@ public class SeriesTest {
 
     @Test
     public void fibonnaciExecuteTest(){
-        int result = series.fibonacciExecute(6);
+        int result = series.fibonacciExecute();
         Assert.assertEquals(8,result);
     }
 
     @Test
     public void sumOfPowersTest(){
         int result = series.sumOfPowers(2);
-        Assert.assertEquals(36,result);
+        Assert.assertEquals(91,result);
     }
 }

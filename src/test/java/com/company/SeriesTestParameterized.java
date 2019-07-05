@@ -12,43 +12,39 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class SeriesTestParameterized {
     private int n;
-    private int q;
-    private int fibcompute;
-    private int fibexecute;
+    private int fibbonaciResult;
     private int p;
     private int sum;
     private Series series;
 
-    public SeriesTestParameterized(int n, int q, int fibcompute, int fibexecute, int p, int sum) {
+    public SeriesTestParameterized(int n, int fibbonaciResult, int p, int sum) {
         this.n = n;
-        this.q = q;
-        this.fibcompute = fibcompute;
-        this.fibexecute = fibexecute;
+        this.fibbonaciResult = fibbonaciResult;
         this.p = p;
         this.sum = sum;
     }
 
     @Before
     public void setUP(){
-        Series series = new Series(n);
+         series = new Series(n);
     }
 
     @Parameterized.Parameters
     public static Collection<Integer[]> data() {
-        Integer[][] array = {{6, 8, 8, 21, 2,36},{9, 15, 34, 610,3,729}};
+        Integer[][] array = {{6, 8, 2,91},{9, 34,3,2025}};
         return Arrays.asList(array);
     }
 
     @Test
     public void fibonnaciComputeTest(){
         int actual = series.fibonnaciCompute();
-        Assert.assertEquals(fibcompute,actual);
+        Assert.assertEquals(fibbonaciResult,actual);
     }
 
     @Test
     public void fibonnaciExecuteTest(){
-        int actual = series.fibonacciExecute(q);
-        Assert.assertEquals(fibexecute,actual);
+        int actual = series.fibonacciExecute();
+        Assert.assertEquals(fibbonaciResult,actual);
     }
 
     @Test

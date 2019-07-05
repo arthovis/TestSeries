@@ -20,20 +20,17 @@ public class Series {
         } return fib;
     }
 
-    public int fibonacciExecute(int q){
-        if(q==0 || q==1) return q;
-        return fibonacciExecute(q-2)+fibonacciExecute(q-1);
+    public int fibonacciExecute(){
+        if(n==0 || n==1) return n;
+        return new Series(n-2).fibonacciExecute()+new Series(n-1).fibonacciExecute();
     }
 
     public int sumOfPowers(int p){
-        int number = 0;
-        double sum = 0;
-        while (number<=n){
-             sum=+Math.pow(number,p);
-            number++;
+        int sum = 0;
+        for(int i=1;i<=n;i++){
+             sum+=Math.pow(i,p);
         }
-        int result = (int) sum;
-        return result;
+        return sum;
     }
 
 
