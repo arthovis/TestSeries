@@ -25,13 +25,15 @@ public class Series {
         return fibonacciExecute(q-2)+fibonacciExecute(q-1);
     }
 
-    public double sumOfPowers(int p, int number){
+    public int sumOfPowers(int p){
+        int number = 0;
         double sum = 0;
         while (number<=n){
              sum=+Math.pow(number,p);
             number++;
         }
-        return sum;
+        int result = (int) sum;
+        return result;
     }
 
 

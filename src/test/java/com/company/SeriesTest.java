@@ -26,7 +26,7 @@ public class SeriesTest {
 
     @Test
     public void sumOfPowersTest(){
-        double result = series.sumOfPowers(2,1);
-        Assert.assertEquals(36,result,0.01);
+        int result = series.sumOfPowers(2);
+        Assert.assertEquals(36,result);
     }
 }

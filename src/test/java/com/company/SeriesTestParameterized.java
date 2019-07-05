@@ -16,17 +16,15 @@ public class SeriesTestParameterized {
     private int fibcompute;
     private int fibexecute;
     private int p;
-    private int number;
     private int sum;
     private Series series;
 
-    public SeriesTestParameterized(int n, int q, int fibcompute, int fibexecute, int p, int number, int sum) {
+    public SeriesTestParameterized(int n, int q, int fibcompute, int fibexecute, int p, int sum) {
         this.n = n;
         this.q = q;
         this.fibcompute = fibcompute;
         this.fibexecute = fibexecute;
         this.p = p;
-        this.number = number;
         this.sum = sum;
     }
 
@@ -37,7 +35,7 @@ public class SeriesTestParameterized {
 
     @Parameterized.Parameters
     public static Collection<Integer[]> data() {
-        Integer[][] array = {{6, 8, 8, 21, 2, 1, 36},{9, 15, 34, 610,3, 1, 729}};
+        Integer[][] array = {{6, 8, 8, 21, 2,36},{9, 15, 34, 610,3,729}};
         return Arrays.asList(array);
     }
 
@@ -55,7 +53,7 @@ public class SeriesTestParameterized {
 
     @Test
     public void sumOfPowersTest(){
-        double actual = series.sumOfPowers(p,number);
-        Assert.assertEquals(sum,actual,0.01);
+        int actual = series.sumOfPowers(p);
+        Assert.assertEquals(sum,actual);
     }
 }
